@@ -1,0 +1,17 @@
+#################
+#XXXXXXXXXXXXXXX#
+#X    X      X/X#
+#X X XXXX XX    #
+#X X    X  XXXXX#
+#X X  X  X     X#
+#X    X    XXXXX#
+#X  XXXXXXX    X#
+#X          X  X#
+#XXXXX X XXXX XX#
+#X         XX  X#
+#X   X X  XX   X#
+#XXXXX    XXXXXX#
+#X   X  X      X#
+#X          X  X#
+#XXXXXXXXXXXXXXX#
+#################
