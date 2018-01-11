@@ -2,7 +2,7 @@
 
 import pygame
 from pygame.locals import *
-from Variables import *
+from Constantes import *
 
 class Level:
 	def __init__(self, fichier):
