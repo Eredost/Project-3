@@ -7,13 +7,13 @@ sprite_size = 40
 window_size = sprite_number * sprite_size
 
 window_title = "McGyver in jail"
-window_icon = "mcgyver.png"
+#window_icon = "mcgyver.png"
 
 
 
 #################  GAMES VARIABLES  #################
 
 
-wall_pic = "wall.png"
-ground_pic = "image1.png"
-guardian_pic ="murdoc.png"
+wall_pic = "Images/wall.png"
+ground_pic = "Images/image1.png"
+#guardian_pic ="murdoc.png"
