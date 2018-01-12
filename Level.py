@@ -52,42 +52,26 @@ class Level:
 				#ADDING SPRITES TO THE LEVEL
 				if sprite in "X" :
 					
+					if self.structure[line_num - 1][case_num] == "X" and self.structure[line_num + 1][case_num] == "X" :
+						window.blit(vertical_wall, (x,y))
 
-					try :
-						assert self.structure[line_num - 1][case_num]
-							
-						assert self.structure[line_num + 1][case_num]
-							
-						assert self.structure[line_num][case_num - 1]
-							
-						assert self.structure[line_num][case_num + 1]
-							
-					except :
-						i += 1
-						print("1", i)
+					elif self.structure[line_num][case_num - 1] == "X" and self.structure[line_num][case_num + 1] == "X" :
+						window.blit(horizontal_wall, (x,y))
 
-						
+					elif self.structure[line_num - 1][case_num] == "X" and self.structure[line_num][case_num + 1] == "X" :
+						window.blit(sw_corner_wall, (x,y))
+
+					elif self.structure[line_num][case_num + 1] == "X" and self.structure[line_num + 1][case_num] == "X" :
+						window.blit(nw_corner_wall, (x,y))
+
+					elif self.structure[line_num + 1][case_num] == "X" and self.structure[line_num][case_num - 1] == "X" :
+						window.blit(ne_corner_wall, (x,y))
+
+					elif self.structure[line_num][case_num - 1] == "X" and self.structure[line_num - 1][case_num] == "X" :
+						window.blit(se_corner_wall, (x,y))
+
 					else :
-						if self.structure[line_num - 1][case_num] == "X" and self.structure[line_num + 1][case_num] == "X" :
-							window.blit(vertical_wall, (x,y))
-
-						elif self.structure[line_num][case_num - 1] == "X" and self.structure[line_num][case_num + 1] == "X" :
-							window.blit(horizontal_wall, (x,y))
-
-						elif self.structure[line_num - 1][case_num] == "X" and self.structure[line_num][case_num + 1] == "X" :
-							window.blit(sw_corner_wall, (x,y))
-
-						elif self.structure[line_num][case_num + 1] == "X" and self.structure[line_num + 1][case_num] == "X" :
-							window.blit(nw_corner_wall, (x,y))
-
-						elif self.structure[line_num + 1][case_num] == "X" and self.structure[line_num][case_num - 1] == "X" :
-							window.blit(ne_corner_wall, (x,y))
-
-						elif self.structure[line_num][case_num - 1] == "X" and self.structure[line_num - 1][case_num] == "X" :
-							window.blit(se_corner_wall, (x,y))
-
-						else :
-							window.blit(middle_wall, (x,y))
+						window.blit(middle_wall, (x,y))
 
 
 
