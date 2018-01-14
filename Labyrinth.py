@@ -1,4 +1,7 @@
 #-*- coding:UTF-8 -*-
+"""This module imports the different necessary
+classes of the project and initialize the
+pygame window"""
 
 import pygame
 from pygame.locals import *
@@ -8,7 +11,7 @@ from Character import *
 
 #INITIALISE PYGAME WINDOW
 pygame.init()
-window = pygame.display.set_mode((WINDOW_SIZE,WINDOW_SIZE))
+window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))
 
 #LOADING ICON AND TITLE OF WINDOW
 icon = pygame.image.load(WINDOW_ICON)
@@ -22,43 +25,48 @@ level.display(window)
 pygame.display.update()
 
 #LOADING GAME CHARACTERS
-Mcgyver = Character(WINDOW_ICON, level)
-window.blit(Mcgyver.character, (Mcgyver.pos_x, Mcgyver.pos_y))
+mcgyver = Character(WINDOW_ICON, level)
 guardian = pygame.image.load(GUARDIAN_PIC).convert_alpha()
 
 #REFRESH THE SCREEN
 pygame.display.flip()
 
-keep_on = 1
+def main():
+    """This function retrieves the captured
+    events (the player's actions) and puts
+    the related items back on the window"""
 
-#LOOP
-while keep_on == 1 :
+    keep_on = 1
 
-	pygame.time.Clock().tick(30)
+    while keep_on == 1:
 
-	for event in pygame.event.get() :
-		if event.type == QUIT :
-			keep_on = 0
+        pygame.time.Clock().tick(30)
 
-		elif event.type == KEYDOWN:
-				
-				#ARROWS KEYS FOR MOVING THE CHARACTER
-				if event.key == K_RIGHT:
-					Mcgyver.move('right')
-				
-				elif event.key == K_LEFT:
-					Mcgyver.move('left')
-				
-				elif event.key == K_UP:
-					Mcgyver.move('up')
-				
-				elif event.key == K_DOWN:
-					Mcgyver.move('down')
+        for event in pygame.event.get():
+            
+            #KEY PRESSED TO EXIT GAME
+            if event.type == QUIT:
+                keep_on = 0
 
-	
-	#REFRESH CHARACTERS AND OBJECTS ON WINDOW				
-	level.display(window)
-	window.blit(guardian,(560,80))
-	window.blit(Mcgyver.character, (Mcgyver.pos_x, Mcgyver.pos_y))
-	pygame.display.flip()
-	
+            elif event.type == KEYDOWN:
+
+                #ARROWS KEYS FOR MOVING THE CHARACTER
+                if event.key == K_RIGHT:
+                    mcgyver.move('right')
+
+                elif event.key == K_LEFT:
+                    mcgyver.move('left')
+
+                elif event.key == K_UP:
+                    mcgyver.move('up')
+
+                elif event.key == K_DOWN:
+                    mcgyver.move('down')
+
+        #REFRESH CHARACTERS AND OBJECTS ON WINDOW
+        level.display(window)
+        window.blit(guardian, (560, 80))
+        window.blit(mcgyver.character, (mcgyver.pos_x, mcgyver.pos_y))
+        pygame.display.flip()
+
+main()
