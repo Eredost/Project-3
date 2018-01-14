@@ -8,11 +8,11 @@ from Character import *
 
 #INITIALISE PYGAME WINDOW
 pygame.init()
-window = pygame.display.set_mode((window_size,window_size))
+window = pygame.display.set_mode((WINDOW_SIZE,WINDOW_SIZE))
 
 #LOADING ICON AND TITLE OF WINDOW
-icon = pygame.image.load(window_icon)
-pygame.display.set_caption(window_title)
+icon = pygame.image.load(WINDOW_ICON)
+pygame.display.set_caption(WINDOW_TITLE)
 pygame.display.set_icon(icon)
 
 #LOADING LEVEL SPRITES
@@ -22,9 +22,9 @@ level.display(window)
 pygame.display.update()
 
 #LOADING GAME CHARACTERS
-Mcgyver = Character(window_icon, level)
+Mcgyver = Character(WINDOW_ICON, level)
 window.blit(Mcgyver.character, (Mcgyver.pos_x, Mcgyver.pos_y))
-guardian = pygame.image.load(guardian_pic).convert_alpha()
+guardian = pygame.image.load(GUARDIAN_PIC).convert_alpha()
 
 #REFRESH THE SCREEN
 pygame.display.flip()

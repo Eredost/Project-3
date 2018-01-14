@@ -1,19 +1,21 @@
 #-*-coding:UTF-8 -*-
+"""This module contain constantes for
+the project"""
 
 #################  WINDOWS VARIABLES  #################
 
-sprite_number = 17
-sprite_size = 40
-window_size = sprite_number * sprite_size
+SPRITE_NUMBER = 17
+SPRITE_SIZE = 40
+WINDOW_SIZE = SPRITE_NUMBER * SPRITE_SIZE
 
-window_title = "McGyver in jail"
-window_icon = "Images/mcgyver.png"
+WINDOW_TITLE = "McGyver in jail"
+WINDOW_ICON = "Images/mcgyver.png"
 
 
 
 #################  GAMES VARIABLES  #################
 
 
-wall_pic = "Images/wall.png"
-ground_pic = "Images/image1.png"
-guardian_pic ="Images/murdoc.png"
+WALL_PIC = "Images/wall.png"
+GROUND_PIC = "Images/image1.png"
+GUARDIAN_PIC ="Images/murdoc.png"

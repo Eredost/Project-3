@@ -44,8 +44,8 @@ class  Level:
        and according to the place in the list of
        elements, we add the corresponding sprite"""
 
-        walls = pygame.image.load(wall_pic)
-        ground = pygame.image.load(ground_pic)
+        walls = pygame.image.load(WALL_PIC)
+        ground = pygame.image.load(GROUND_PIC)
         horizontal_wall = walls.subsurface(160, 0, 40, 40).convert()
         vertical_wall = walls.subsurface(260, 120, 40, 40).convert()
         ne_corner_wall = walls.subsurface(400, 120, 40, 40).convert()
@@ -59,8 +59,8 @@ class  Level:
         for line in self.structure:
             case_num = 0
             for sprite in line:
-                pos_x = case_num * sprite_size
-                pos_y = line_num * sprite_size
+                pos_x = case_num * SPRITE_SIZE
+                pos_y = line_num * SPRITE_SIZE
                 if sprite in "X":
                     if self.structure[line_num - 1][case_num] == "X" and \
                             self.structure[line_num + 1][case_num] == "X":

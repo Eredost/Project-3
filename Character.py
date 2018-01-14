@@ -31,36 +31,36 @@ class Character:
 
         if direction == "right":
 
-            if self.case_x < (sprite_number - 1):
+            if self.case_x < (SPRITE_NUMBER - 1):
 
-                if self.level.structure[self.case_y][self.case_x+1] not in "#X/":
+                if self.level.structure[self.case_y][self.case_x+1] not in "#X":
 
                     self.case_x += 1
-                    self.pos_x = self.case_x * sprite_size
+                    self.pos_x = self.case_x * SPRITE_SIZE
 
         if direction == "left":
 
             if self.case_x > 0:
 
-                if self.level.structure[self.case_y][self.case_x-1] not in "#X/":
+                if self.level.structure[self.case_y][self.case_x-1] not in "#X":
 
                     self.case_x -= 1
-                    self.pos_x = self.case_x * sprite_size
+                    self.pos_x = self.case_x * SPRITE_SIZE
 
         if direction == "up":
 
             if self.case_y > 0:
 
-                if self.level.structure[self.case_y-1][self.case_x] not in "#X/":
+                if self.level.structure[self.case_y-1][self.case_x] not in "#X":
 
                     self.case_y -= 1
-                    self.pos_y = self.case_y * sprite_size
+                    self.pos_y = self.case_y * SPRITE_SIZE
 
         if direction == "down":
 
-            if self.case_y < (sprite_number - 1):
+            if self.case_y < (SPRITE_NUMBER - 1):
 
-                if self.level.structure[self.case_y+1][self.case_x] not in "#X/":
+                if self.level.structure[self.case_y+1][self.case_x] not in "X#":
 
                     self.case_y += 1
-                    self.pos_y = self.case_y * sprite_size
+                    self.pos_y = self.case_y * SPRITE_SIZE
