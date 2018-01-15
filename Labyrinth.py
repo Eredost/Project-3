@@ -8,6 +8,7 @@ from pygame.locals import *
 
 from Level import *
 from Character import *
+from Item import *
 
 #INITIALISE PYGAME WINDOW
 pygame.init()
@@ -18,10 +19,15 @@ icon = pygame.image.load(WINDOW_ICON)
 pygame.display.set_caption(WINDOW_TITLE)
 pygame.display.set_icon(icon)
 
-#LOADING LEVEL SPRITES
+#LOADING LEVEL SPRITES AND OBJECTS
 level = Level("Niveau.txt")
 level.world_generator()
 level.display(window)
+objects = pygame.image.load(ITEMS)
+item_1 = objects.subsurface(96,0,32,32)
+item_2 = objects.subsurface(128,0,32,32)
+item_3 = objects.subsurface(160,0,32,32)
+items = Item(item_1, item_2, item_3, level)
 pygame.display.update()
 
 #LOADING GAME CHARACTERS
@@ -65,6 +71,7 @@ def main():
 
         #REFRESH CHARACTERS AND OBJECTS ON WINDOW
         level.display(window)
+        items.placement(window)
         window.blit(guardian, (560, 80))
         window.blit(mcgyver.character, (mcgyver.pos_x, mcgyver.pos_y))
         pygame.display.flip()

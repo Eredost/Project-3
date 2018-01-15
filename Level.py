@@ -19,6 +19,7 @@ class  Level:
 
         self.fichier = fichier
         self.structure = 0
+        self.blank_cases = 0
 
     def world_generator(self):
         """It loads the contents of the text file
@@ -55,6 +56,7 @@ class  Level:
         middle_wall = walls.subsurface(300, 20, 40, 40).convert()
         floor_tile = ground.subsurface(300, 60, 20, 20).convert()
         line_num = 0
+        blank_case = []
 
         for line in self.structure:
             case_num = 0
@@ -89,11 +91,16 @@ class  Level:
                     else:
                         window.blit(middle_wall, (pos_x, pos_y))
 
-                elif sprite != "#":
+                elif sprite != "#" and sprite != "X":
                     window.blit(floor_tile, (pos_x, pos_y))
                     window.blit(floor_tile, (pos_x+20, pos_y))
                     window.blit(floor_tile, (pos_x, pos_y+20))
                     window.blit(floor_tile, (pos_x+20, pos_y+20))
+                    
+                    if sprite == " ":
+                        blank_case.append([pos_x, pos_y])
 
                 case_num += 1
             line_num += 1
+
+        self.blank_cases = blank_case
