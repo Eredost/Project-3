@@ -19,20 +19,18 @@ icon = pygame.image.load(WINDOW_ICON)
 pygame.display.set_caption(WINDOW_TITLE)
 pygame.display.set_icon(icon)
 
-#LOADING LEVEL SPRITES AND OBJECTS
+#LOADING LEVEL SPRITES, OBJECTS AND GAME CHARACTERS
 level = Level("Niveau.txt")
 level.world_generator()
 level.display(window)
+mcgyver = Character(WINDOW_ICON, level)
+guardian = pygame.image.load(GUARDIAN_PIC).convert_alpha()
 objects = pygame.image.load(ITEMS)
 item_1 = objects.subsurface(96,0,32,32)
 item_2 = objects.subsurface(128,0,32,32)
 item_3 = objects.subsurface(160,0,32,32)
-items = Item(item_1, item_2, item_3, level)
+items = Item(item_1, item_2, item_3, level, mcgyver)
 pygame.display.update()
-
-#LOADING GAME CHARACTERS
-mcgyver = Character(WINDOW_ICON, level)
-guardian = pygame.image.load(GUARDIAN_PIC).convert_alpha()
 
 #REFRESH THE SCREEN
 pygame.display.flip()
