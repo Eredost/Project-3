@@ -19,7 +19,6 @@ class Item:
 		self.level = level
 		self.character = character
 		self.items_pos = []
-		self.items_position = []
 		self.inventory = []
 
 		for item in self.items:
@@ -32,18 +31,17 @@ class Item:
 		
 		for item in self.items:
 
+			blank_case_x = self.level.blank_cases[self.items_pos[value]][0]
+			blank_case_y = self.level.blank_cases[self.items_pos[value]][1]
+
 			if item not in self.inventory:
 			
-				window.blit(item, (self.level.blank_cases[self.items_pos[value]][0],\
-							   	   self.level.blank_cases[self.items_pos[value]][1]))
-				
-				self.items_position.append([item, self.level.blank_cases[self.items_pos[value]][0], \
-							   	   self.level.blank_cases[self.items_pos[value]][1]])
+				window.blit(item, (blank_case_x, blank_case_y))
 
-				if self.character.pos_x == self.level.blank_cases[self.items_pos[value]][0] and \
-				   self.character.pos_y == self.level.blank_cases[self.items_pos[value]][1]:
+				if self.character.pos_x == blank_case_x and \
+				   self.character.pos_y == blank_case_y:
 
-					self.inventory.append(self.items_position[value][0])
+					self.inventory.append(item)
 			
 			value += 1
 
