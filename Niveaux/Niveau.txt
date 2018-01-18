@@ -1,7 +1,7 @@
 #################
 #XXXXXXXXXXXXXXX#
-#X    X      X/X#
-#X X XXXX XX    #
+#X  A X      XBX#
+#X X XXXX XX  F/#
 #X X    X  XXXXX#
 #X X  X  X     X#
 #X    X    XXXXX#
