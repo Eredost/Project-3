@@ -20,7 +20,7 @@ pygame.display.set_caption(WINDOW_TITLE)
 pygame.display.set_icon(icon)
 
 #LOADING LEVEL SPRITES, OBJECTS AND GAME CHARACTERS
-level = Level("Niveaux/Niveau.txt")
+level = Level("Levels/Level.txt")
 level.world_generator()
 level.display(window)
 mcgyver = Character(WINDOW_ICON, level)
