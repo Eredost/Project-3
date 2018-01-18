@@ -25,9 +25,9 @@ class  Level:
         """It loads the contents of the text file
        for inclusion in a list and use it later"""
 
-        with open("Niveau.txt", "r") as fichier:
+        with open(self.fichier, "r") as file:
             level_structure = []
-            for ligne in fichier:
+            for ligne in file:
                 line_level = []
 
                 for sprite in ligne:
@@ -91,16 +91,28 @@ class  Level:
                     else:
                         window.blit(middle_wall, (pos_x, pos_y))
 
-                elif sprite != "#" and sprite != "X":
+                elif sprite not in "X#":
                     window.blit(floor_tile, (pos_x, pos_y))
                     window.blit(floor_tile, (pos_x+20, pos_y))
                     window.blit(floor_tile, (pos_x, pos_y+20))
                     window.blit(floor_tile, (pos_x+20, pos_y+20))
+
+                    if sprite in "A":
+                        character_a_pos = [pos_x, pos_y]
+
+                    elif sprite in "B":
+                        character_b_pos = [pos_x, pos_y]
+
+                    elif sprite in "F":
+                        finish_line_pos = [pos_x, pos_y]
                     
-                    if sprite == " ":
+                    elif sprite == " ":
                         blank_case.append([pos_x, pos_y])
 
                 case_num += 1
             line_num += 1
 
         self.blank_cases = blank_case
+        self.character_a_pos = character_a_pos
+        self.character_b_pos = character_b_pos
+        self.finish_line_pos = finish_line_pos
