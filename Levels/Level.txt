@@ -1,6 +1,6 @@
 #################
 #XXXXXXXXXXXXXXX#
-#X  A X      XBX#
+#X    X      XBX#
 #X X XXXX XX  F/#
 #X X    X  XXXXX#
 #X X  X  X     X#
@@ -11,7 +11,7 @@
 #X         XX  X#
 #X   X X  XX   X#
 #XXXXX    XXXXXX#
-#X   X  X      X#
+#X A X  X      X#
 #X          X  X#
 #XXXXXXXXXXXXXXX#
 #################
