@@ -33,7 +33,7 @@ class Character:
 
             if self.case_x < (SPRITE_NUMBER - 1):
 
-                if self.level.structure[self.case_y][self.case_x+1] not in "#X":
+                if self.level.structure[self.case_y][self.case_x+1] not in "#X/":
 
                     self.case_x += 1
                     self.pos_x = self.case_x * SPRITE_SIZE
@@ -42,7 +42,7 @@ class Character:
 
             if self.case_x > 0:
 
-                if self.level.structure[self.case_y][self.case_x-1] not in "#X":
+                if self.level.structure[self.case_y][self.case_x-1] not in "#X/":
 
                     self.case_x -= 1
                     self.pos_x = self.case_x * SPRITE_SIZE
@@ -51,7 +51,7 @@ class Character:
 
             if self.case_y > 0:
 
-                if self.level.structure[self.case_y-1][self.case_x] not in "#X":
+                if self.level.structure[self.case_y-1][self.case_x] not in "#X/":
 
                     self.case_y -= 1
                     self.pos_y = self.case_y * SPRITE_SIZE
@@ -60,7 +60,7 @@ class Character:
 
             if self.case_y < (SPRITE_NUMBER - 1):
 
-                if self.level.structure[self.case_y+1][self.case_x] not in "X#":
+                if self.level.structure[self.case_y+1][self.case_x] not in "X#/":
 
                     self.case_y += 1
                     self.pos_y = self.case_y * SPRITE_SIZE
