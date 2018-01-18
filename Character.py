@@ -19,11 +19,11 @@ class Character:
         and we implant it as its initial position"""
 
         self.character = pygame.image.load(character).convert_alpha()
-        self.case_x = 3
-        self.case_y = 13
-        self.pos_x = 120
-        self.pos_y = 520
         self.level = level
+        self.case_x = self.level.character_a_pos[0] // SPRITE_SIZE
+        self.case_y = self.level.character_a_pos[1] // SPRITE_SIZE
+        self.pos_x = self.level.character_a_pos[0]
+        self.pos_y = self.level.character_a_pos[1]
 
     def move(self, direction):
         """The x and y position of the character

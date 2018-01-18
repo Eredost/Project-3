@@ -20,7 +20,7 @@ pygame.display.set_caption(WINDOW_TITLE)
 pygame.display.set_icon(icon)
 
 #LOADING LEVEL SPRITES, OBJECTS AND GAME CHARACTERS
-level = Level("Niveau.txt")
+level = Level("Niveaux/Niveau.txt")
 level.world_generator()
 level.display(window)
 mcgyver = Character(WINDOW_ICON, level)
@@ -70,7 +70,7 @@ def main():
         #REFRESH CHARACTERS AND OBJECTS ON WINDOW
         level.display(window)
         items.placement(window)
-        window.blit(guardian, (560, 80))
+        window.blit(guardian, (level.character_b_pos))
         window.blit(mcgyver.character, (mcgyver.pos_x, mcgyver.pos_y))
         pygame.display.flip()
 
