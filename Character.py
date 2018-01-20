@@ -1,13 +1,10 @@
 #-*-coding:UTF-8 -*-
 """This module create a playable character
-with different mechanics, like move and check
-his position on interface"""
+with different mechanics, like movement"""
 
 import pygame
-from pygame.locals import *
 
-from Constantes import *
-from Level import *
+from Variables import SPRITE_SIZE, SPRITE_NUMBER
 
 
 class Character:

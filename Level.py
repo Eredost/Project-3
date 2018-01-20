@@ -6,7 +6,7 @@ playable interface"""
 import pygame
 from pygame.locals import *
 
-from Constantes import *
+from Variables import *
 
 
 class  Level:
@@ -27,6 +27,8 @@ class  Level:
 
         with open(self.fichier, "r") as file:
             level_structure = []
+            #WE IMPLANT LINE BY LINE AND LETTERS BY LETTERS IN A LIST
+            #THE FULL TEXTE FILE
             for ligne in file:
                 line_level = []
 
@@ -58,11 +60,15 @@ class  Level:
         line_num = 0
         blank_case = []
 
+        #WE TAKE IN PARAMETER THE DIFFERENTS LISTS
         for line in self.structure:
             case_num = 0
+            #WE PASS IN PARAMETER THE DIFFERENTS LETTERS
             for sprite in line:
                 pos_x = case_num * SPRITE_SIZE
                 pos_y = line_num * SPRITE_SIZE
+                #We add according to the position of the index and if
+                #the letter is an "X", we implant the corresponding wall
                 if sprite in "X":
                     if self.structure[line_num - 1][case_num] == "X" and \
                             self.structure[line_num + 1][case_num] == "X":
@@ -88,9 +94,11 @@ class  Level:
                             self.structure[line_num - 1][case_num] == "X":
                         window.blit(se_corner_wall, (pos_x, pos_y))
 
+                    #ELSE WE IMPLANT THE DEFAULT WALL
                     else:
                         window.blit(middle_wall, (pos_x, pos_y))
 
+                #WE SAVED POSITIONS, DIFFERENT TO "X" TO USE IT LATER
                 elif sprite not in "X#":
                     window.blit(floor_tile, (pos_x, pos_y))
                     window.blit(floor_tile, (pos_x+20, pos_y))
@@ -105,7 +113,7 @@ class  Level:
 
                     elif sprite in "F":
                         finish_line_pos = [pos_x, pos_y]
-                    
+
                     elif sprite == " ":
                         blank_case.append([pos_x, pos_y])
 

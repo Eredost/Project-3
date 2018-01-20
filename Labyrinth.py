@@ -6,9 +6,10 @@ pygame window"""
 import pygame
 from pygame.locals import *
 
-from Level import *
-from Character import *
-from Item import *
+from Level import Level
+from Character import Character
+from Item import Item
+from Variables import *
 
 def main():
     """This function retrieves the captured
@@ -17,6 +18,7 @@ def main():
 
     restart = 1
 
+    #MAIN LOOP
     while restart == 1:
 
         #INITIALISE PYGAME WINDOW
@@ -38,9 +40,9 @@ def main():
         mcgyver = Character(WINDOW_ICON, level)
         guardian = pygame.image.load(GUARDIAN_PIC).convert_alpha()
         objects = pygame.image.load(ITEMS)
-        item_1 = objects.subsurface(96,0,32,32)
-        item_2 = objects.subsurface(128,0,32,32)
-        item_3 = objects.subsurface(160,0,32,32)
+        item_1 = objects.subsurface(96, 0, 32, 32)
+        item_2 = objects.subsurface(128, 0, 32, 32)
+        item_3 = objects.subsurface(160, 0, 32, 32)
         items = Item(item_1, item_2, item_3, level, mcgyver)
         pygame.display.update()
 
@@ -54,12 +56,10 @@ def main():
         while keep_on == 1:
 
             pygame.time.Clock().tick(30)
-
+            #CHECKING ALL PLAYERS ACTIONS (KEYS PRESSED)
             for event in pygame.event.get():
-                    
                 #KEY PRESSED TO EXIT GAME
                 if event.type == QUIT:
-                    
                     keep_on = 0
                     choice = "F2"
 
@@ -89,30 +89,30 @@ def main():
                 mcgyver.pos_y == level.finish_line_pos[1]:
 
                 if len(items.inventory) == len(items.items):
-                    
-                    bulle = Rect(200,250,300,300)
- 
-                    x_rect,y_rect = bulle.topleft
- 
+                    #CREATING RECTANGLE TO CONTAIN TEXT DISPLAY
+                    bulle = Rect(200, 250, 300, 300)
+                    x_rect, y_rect = bulle.topleft
+
                     for ligne in WIN_DISPLAY.splitlines():
-                        
-                        x_rect,y_rect = window.blit(font.render(ligne,1,(255,255,255)),(x_rect,y_rect)).bottomleft
+
+                        x_rect, y_rect = window.blit(font.render(ligne, 1, (255, 255, 255)), \
+                                                   (x_rect, y_rect)).bottomleft
                         pygame.display.update(bulle)
                     keep_on = 0
 
                 else:
 
-                    bulle = Rect(200,250,300,300)
- 
-                    x_rect,y_rect = bulle.topleft
- 
+                    bulle = Rect(200, 250, 300, 300)
+                    x_rect, y_rect = bulle.topleft
+
                     for ligne in LOOSE_DISPLAY.splitlines():
-                        
-                        x_rect,y_rect = window.blit(font.render(ligne,1,(255,255,255)),(x_rect,y_rect)).bottomleft
+
+                        x_rect, y_rect = window.blit(font.render(ligne, 1, (255, 255, 255)), \
+                                                   (x_rect, y_rect)).bottomleft
                         pygame.display.update(bulle)
                     keep_on = 0
 
-
+        #PLAYER'S CHOICE LOOP TO RESTART
         while choice == "":
 
             pygame.time.Clock().tick(30)
@@ -131,6 +131,6 @@ def main():
                         restart = 0
                         choice = "F2"
 
-if __name__ == "__main__" :
-    
+if __name__ == "__main__":
+
     main()
