@@ -1,5 +1,5 @@
-#Save Macgyver
----------------
+Save Macgyver
+===============
 
 In this game, you will incarn Macgyver.
 Your goal is simple, recover the 3 objects randomly distributed on the map,
@@ -10,7 +10,9 @@ This program has been coded in python with the pygame module.
 
 
 
-##Prerequisites
+
+
+Prerequisites
 ---------------
 
 In order to run the program correctly you need to install the modules present in the "requirements.txt".
@@ -20,6 +22,7 @@ First install **pip** :
 
   **On Linux :**
 
+	
 	...:~$ sudo apt-get install python-pip
 
   
@@ -29,27 +32,35 @@ First install **pip** :
 
   And run the command :	
 
+	
 	python get-pip.py
 
 
 After installing run the command :
 
+	
 	C:\...\Project3> pip install -r requirements.txt
+
 
 **And it's done !**
 
 
 
-##Run test
+
+
+Run test
 ---------------
 
 To test the project, you can run it by opening it with the labyrinth.py file :
 
+	
 	C:\...\Project3> python Labyrinth.py
 
 
 
-##Author
+
+
+Author
 ---------------
 
 Michael Coutin *-Initial work-* [Github](https://github.com/Eredost)
