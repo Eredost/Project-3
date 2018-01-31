@@ -30,17 +30,21 @@ def main():
         pygame.display.set_caption(WINDOW_TITLE)
         pygame.display.set_icon(icon)
 
-        #LOADING WIN AND LOOSE FONT
+        #LOADING WIN AND LOOSE DISPLAY FONT
         font = pygame.font.SysFont('Arial', 25)
 
-        #LOADING LEVEL SPRITES, OBJECTS AND GAME CHARACTERS
+        #LOADING LEVEL
         level = Level("Levels/Level.txt")
         level.world_generator()
         level.display(window)
+
+        #LOADING CHARACTERS
         characters = pygame.image.load(CHARACTER_PIC)
         macgyver_pic = characters.subsurface(288, 0, 32, 32).convert_alpha()
         guardian_pic = characters.subsurface(224, 0, 32, 32).convert_alpha()
         mcgyver = Character(macgyver_pic, level)
+
+        #LOADING ITEMS
         objects = pygame.image.load(ITEMS)
         item_1 = objects.subsurface(96, 0, 32, 32)
         item_2 = objects.subsurface(128, 0, 32, 32)
@@ -51,8 +55,13 @@ def main():
         #REFRESH THE SCREEN
         pygame.display.flip()
 
+        #VARIABLE TO KEEP PLAYER CHOICE LOOP
         keep_on = 1
+        
+        #VARIABLE USED TO RESTART GAME
         restart = 0
+
+        #VARIABLE FOR PLAYER CHOICE TO RESTART
         choice = ""
 
         while keep_on == 1:
@@ -92,26 +101,26 @@ def main():
 
                 if len(items.inventory) == len(items.items):
                     #CREATING RECTANGLE TO CONTAIN TEXT DISPLAY
-                    bulle = Rect(200, 250, 300, 300)
-                    x_rect, y_rect = bulle.topleft
+                    display_rect = Rect(200, 250, 300, 300)
+                    x_rect, y_rect = display_rect.topleft
 
-                    for ligne in WIN_DISPLAY.splitlines():
+                    for line in WIN_DISPLAY.splitlines():
 
-                        x_rect, y_rect = window.blit(font.render(ligne, 1, (255, 255, 255)), \
+                        x_rect, y_rect = window.blit(font.render(line, 1, (255, 255, 255)), \
                                                    (x_rect, y_rect)).bottomleft
-                        pygame.display.update(bulle)
+                        pygame.display.update(display_rect)
                     keep_on = 0
 
                 else:
 
-                    bulle = Rect(200, 250, 300, 300)
-                    x_rect, y_rect = bulle.topleft
+                    display_rect = Rect(200, 250, 300, 300)
+                    x_rect, y_rect = display_rect.topleft
 
-                    for ligne in LOOSE_DISPLAY.splitlines():
+                    for line  in LOOSE_DISPLAY.splitlines():
 
-                        x_rect, y_rect = window.blit(font.render(ligne, 1, (255, 255, 255)), \
+                        x_rect, y_rect = window.blit(font.render(line, 1, (255, 255, 255)), \
                                                    (x_rect, y_rect)).bottomleft
-                        pygame.display.update(bulle)
+                        pygame.display.update(display_rect)
                     keep_on = 0
 
         #PLAYER'S CHOICE LOOP TO RESTART
