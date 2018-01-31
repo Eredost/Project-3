@@ -15,7 +15,7 @@ class Character:
         """Loading sprite of the character and
         and we implant it as its initial position"""
 
-        self.character = pygame.image.load(character).convert_alpha()
+        self.character = character
         self.level = level
         self.case_x = self.level.character_a_pos[0] // SPRITE_SIZE
         self.case_y = self.level.character_a_pos[1] // SPRITE_SIZE
