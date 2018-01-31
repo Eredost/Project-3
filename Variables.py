@@ -18,7 +18,6 @@ WINDOW_ICON = "Images/mcgyver.png"
 
 WALL_PIC = "Images/wall.png"
 GROUND_PIC = "Images/image1.png"
-GUARDIAN_PIC = "Images/murdoc.png"
 ITEMS = "Images/items.png"
 CHARACTER_PIC = "Images/characters.png"
 

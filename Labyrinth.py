@@ -37,10 +37,10 @@ def main():
         level = Level("Levels/Level.txt")
         level.world_generator()
         level.display(window)
-        mcgyver_character = pygame.image.load(CHARACTER_PIC)
-        macgyver_pic = mcgyver_character.subsurface(288, 0, 32, 32).convert_alpha()
+        characters = pygame.image.load(CHARACTER_PIC)
+        macgyver_pic = characters.subsurface(288, 0, 32, 32).convert_alpha()
+        guardian_pic = characters.subsurface(224, 0, 32, 32).convert_alpha()
         mcgyver = Character(macgyver_pic, level)
-        guardian = pygame.image.load(GUARDIAN_PIC).convert_alpha()
         objects = pygame.image.load(ITEMS)
         item_1 = objects.subsurface(96, 0, 32, 32)
         item_2 = objects.subsurface(128, 0, 32, 32)
@@ -83,7 +83,7 @@ def main():
             #REFRESH CHARACTERS AND OBJECTS ON WINDOW
             level.display(window)
             items.placement(window)
-            window.blit(guardian, (level.character_b_pos))
+            window.blit(guardian_pic, (level.character_b_pos))
             window.blit(mcgyver.character, (mcgyver.pos_x, mcgyver.pos_y))
             pygame.display.flip()
 
