@@ -19,8 +19,7 @@ class  Level:
 
         self.fichier = fichier
         self.structure = 0
-        self.blank_cases = 0
-
+        
     def world_generator(self):
         """It loads the contents of the text file
        for inclusion in a list and use it later"""
@@ -47,6 +46,7 @@ class  Level:
        and according to the place in the list of
        elements, we add the corresponding sprite"""
 
+        #LOADING DIFFERENTS WALLS
         walls = pygame.image.load(WALL_PIC)
         ground = pygame.image.load(GROUND_PIC)
         horizontal_wall = walls.subsurface(160, 0, 40, 40).convert()
@@ -56,8 +56,13 @@ class  Level:
         se_corner_wall = walls.subsurface(400, 80, 40, 40).convert()
         sw_corner_wall = walls.subsurface(440, 80, 40, 40).convert()
         middle_wall = walls.subsurface(300, 20, 40, 40).convert()
+        
+        #LOADING FLOOR TILES
         floor_tile = ground.subsurface(300, 60, 20, 20).convert()
+        
         line_num = 0
+        
+        #CREATING LIST TO SAVE ALL BLANK CASES FOR ITEMS
         blank_case = []
 
         #WE TAKE IN PARAMETER THE DIFFERENTS LISTS
