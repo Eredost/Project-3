@@ -21,10 +21,10 @@ GROUND_PIC = "Images/image1.png"
 ITEMS = "Images/items.png"
 CHARACTER_PIC = "Images/characters.png"
 
-WIN_DISPLAY = """Vous avez gagné !
-Voulez-vous rejouez ?
-(F1): Oui, (F2): Non"""
+WIN_DISPLAY = """You have won !
+Do you want to play again ?
+(F1): YES, (F2): NO"""
 
-LOOSE_DISPLAY = """Vous avez perdu !
-Voulez-vous rejouez ?
-(F1): Oui, (F2): Non"""
+LOOSE_DISPLAY = """You lost !
+Do you want to play again ?
+(F1): YES, (F2): NO"""
