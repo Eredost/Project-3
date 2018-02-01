@@ -101,7 +101,7 @@ def main():
 
                 if len(items.inventory) == len(items.items):
                     #CREATING RECTANGLE TO CONTAIN TEXT DISPLAY
-                    display_rect = Rect(200, 250, 300, 300)
+                    display_rect = Rect(200, 250, 330, 300)
                     x_rect, y_rect = display_rect.topleft
 
                     for line in WIN_DISPLAY.splitlines():
@@ -113,7 +113,7 @@ def main():
 
                 else:
 
-                    display_rect = Rect(200, 250, 300, 300)
+                    display_rect = Rect(200, 250, 330, 300)
                     x_rect, y_rect = display_rect.topleft
 
                     for line  in LOOSE_DISPLAY.splitlines():
