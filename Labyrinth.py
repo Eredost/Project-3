@@ -99,11 +99,12 @@ def main():
             if mcgyver.pos_x == level.finish_line_pos[0] and \
                 mcgyver.pos_y == level.finish_line_pos[1]:
 
+                #CREATING RECTANGLE TO CONTAIN TEXT DISPLAY
+                display_rect = Rect(200, 250, 330, 300)
+                x_rect, y_rect = display_rect.topleft
+                
                 if len(items.inventory) == len(items.items):
-                    #CREATING RECTANGLE TO CONTAIN TEXT DISPLAY
-                    display_rect = Rect(200, 250, 330, 300)
-                    x_rect, y_rect = display_rect.topleft
-
+                    
                     for line in WIN_DISPLAY.splitlines():
 
                         x_rect, y_rect = window.blit(font.render(line, 1, (255, 255, 255)), \
@@ -112,9 +113,6 @@ def main():
                     keep_on = 0
 
                 else:
-
-                    display_rect = Rect(200, 250, 330, 300)
-                    x_rect, y_rect = display_rect.topleft
 
                     for line  in LOOSE_DISPLAY.splitlines():
 
