@@ -21,6 +21,9 @@ def main():
     #MAIN LOOP
     while restart == 1:
 
+        #USER CHOOSE THE LEVEL HE WANT TO PLAY
+        level_choice = input("Choose your level : ")
+
         #INITIALISE PYGAME WINDOW
         pygame.init()
         window = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))
@@ -34,7 +37,7 @@ def main():
         font = pygame.font.SysFont('Arial', 25)
 
         #LOADING LEVEL
-        level = Level("Levels/Level.txt")
+        level = Level("Levels/{}".format(level_choice))
         level.world_generator()
         level.display(window)
 
