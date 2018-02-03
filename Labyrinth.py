@@ -18,11 +18,11 @@ def main():
 
     restart = 1
 
+    #USER CHOOSE THE LEVEL HE WANT TO PLAY
+    level_choice = input("Choose your level : ")
+
     #MAIN LOOP
     while restart == 1:
-
-        #USER CHOOSE THE LEVEL HE WANT TO PLAY
-        level_choice = input("Choose your level : ")
 
         #INITIALISE PYGAME WINDOW
         pygame.init()
